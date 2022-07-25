@@ -35,6 +35,7 @@ export const Form = () => {
             </form>
 
             <button onClick={() => nameInput.current.select()}>Fill form</button>
+            <hr/>
         </div>
     )
 }

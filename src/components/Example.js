@@ -20,7 +20,6 @@ export const Example = () => {
 
   return (
     <div>
-        <h1>Example with useRef</h1>
         <h2>Grettings sent: {numberGretting}</h2>
         <button onClick={sendGretting}>Send grettings</button>
         <hr/>
