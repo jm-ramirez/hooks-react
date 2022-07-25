@@ -244,3 +244,11 @@ input[type='email'] {
   padding: 10px;
   width: 50%;
 }
+
+#box {
+  width: 200px;
+  height: 200px;
+  background-color: #61dafb;
+  color: black;
+  position: absolute;
+}
