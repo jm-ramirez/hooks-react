@@ -11,7 +11,7 @@ export const Example = () => {
         setTimeout(() => {
             console.log(`Grettings in queue: ${grettingsInQueue.current}`);
         }, 2000);
-    }, [numberGretting])
+    }, [numberGretting]);
     
 
     const sendGretting = e => {

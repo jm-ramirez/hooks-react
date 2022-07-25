@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react'
 
-export const Employees = React.memo(({page}) => {
+export const Employees = /*React.memo(*/({page}) => {//Utilizo memo para memorizar estado de un componente y no renderizarlo hasta que no cambie su estado
     const [employees, setEmployees] = useState([]);
-    console.log('Employees have been re-rendered');
+
+    useEffect(() => {
+        getEmployees(page);
+    }, [page]);
 
     const getEmployees = async(p) => {console.log(p);
         const url = `https://reqres.in/api/users?page=${p}`;
@@ -15,9 +18,8 @@ export const Employees = React.memo(({page}) => {
     };
 
     useEffect(() => {
-        getEmployees(page);
-    }, [page]);
-    
+        console.log('Employees have been re-rendered');
+    }, [employees]);
 
     return (
         <div>
@@ -31,4 +33,4 @@ export const Employees = React.memo(({page}) => {
             </ul>
         </div>
     )
-})
+}//)

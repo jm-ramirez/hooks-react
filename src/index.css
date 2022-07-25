@@ -132,6 +132,11 @@ input[type="button"] {
   font-weight: 500;
   cursor: pointer;
   transition: all 300ms;
+  padding: 10px;
+}
+
+input[type="submit"]:hover {
+  opacity: 0.8;
 }
 
 .movie-item .edit {
@@ -228,4 +233,14 @@ input[type="button"] {
 .background-green {
   background-color: green;
   color: white;
+}
+
+.task-container {
+  width: 80%;
+}
+
+input[type='text'],
+input[type='email'] {
+  padding: 10px;
+  width: 50%;
 }

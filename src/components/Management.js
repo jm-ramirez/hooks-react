@@ -12,7 +12,7 @@ export const Management = () => {
     
     useEffect(() => {
         console.log('The view has been rendered');
-    },)
+    },[name, page])
     
     return (
         <div>

@@ -1,6 +1,7 @@
 import { Example } from "./components/Example";
 import { Form } from "./components/Form";
 import { Management } from "./components/Management";
+import { Tasks } from "./components/Tasks";
 
 function App() {
   return (
@@ -10,8 +11,10 @@ function App() {
         <h1>Example with useRef</h1>
         <Example/>
         <Form/>
-        {/* memo */}
         <h1>Example with memo</h1>
+        {/* useMemo */}
+        <Tasks/>
+        {/* memo */}
         <Management/>
       </header>
     </div>
