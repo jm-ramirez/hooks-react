@@ -24,14 +24,16 @@ export const Tasks = () => {
 
     const lastCounters = (acumulation) => {
         for (let i = 0; i <= acumulation; i++) {
-            console.log('Ejecutando acumulacion de contadores del pasado...');
+            console.log('Executing accumulation of counters from the past...');
         }
 
         return `Manual task counter: ${acumulation}`;
 
     };
 
-    //Utilizo useMemo para que se memorice una funcion y solo se recargue cuando se modifique la dependencia.
+    //useMemo -- SE UTILIZA GENERALMENTE PARA MEJORAR EL PERFORMANCE DE LA APLICACION
+    //EN ESTE CASO LE ASIGNAMOS A LA CONSTANTE memoCounters LA FUNCION lastCounters Y PONEMOS COMO DEPENDENCIA counter.
+    //ESTO HACE QUE LA FUNCION SEA LLAMADA SOLO CUANDO INICIA EL COMPONENTE Y CUANDO CAMBIE EL VALOR DE counter, ASI EVITAMOS QUE SE RECARGUE VARIAS VECES.
     const memoCounters = useMemo(() => lastCounters(counter), [counter]);
     return (
         <div>

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useCallback, useEffect, useRef, useState } from 'react'
 import { Employees } from './Employees'
 
 export const Management = () => {
@@ -12,7 +12,12 @@ export const Management = () => {
     
     useEffect(() => {
         console.log('The view has been rendered');
-    },[name, page])
+    },[name, page]);
+    
+    // useCallback -- ES SIMILAR A useMemo, LA DIFERENCIA ES QUE useMemo MEMORIZA UN VALOR Y useCallback MEMORIZA UNA FUNCION.
+    const showMessage = useCallback(() => {
+        console.log('Component message using useCallback');
+    }, [page]);
     
     return (
         <div>
@@ -23,7 +28,7 @@ export const Management = () => {
             <p>Users come from jsonplaceholder...</p>
             <button onClick={() => setPage(1) }>Page 1</button> 
             <button onClick={() => setPage(2) }>Page 2</button>
-            <Employees page={page}/>
+            <Employees page={page} message={showMessage}/>
             <hr/>
         </div>
     )
